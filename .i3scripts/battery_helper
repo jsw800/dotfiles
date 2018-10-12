@@ -1,0 +1,24 @@
+#!/bin/bash
+
+i=0
+~/.i3scripts/battery | while IFS= read -r line ; do
+    if ! [ $i -gt 1 ]; then
+        bat=${line:0:2}
+        last=${line:2:1}
+        if [ $last = "0" ]; then
+            line=" $line"
+        elif [ $bat -ge "85" ]; then
+            line="  $line"
+        elif [ $bat -ge "60" ]; then
+            line=" $line"
+        elif [ $bat -ge "40" ]; then
+            line=" $line"
+        elif [ $bat -ge "20" ]; then
+            line=" $line"
+        else
+            line=" $line"
+        fi
+    fi
+    echo $line
+    i=$((i+1))
+done
