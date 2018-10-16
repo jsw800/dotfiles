@@ -42,6 +42,13 @@ command=~/.i3scripts/volume-pulseaudio | python ~/.i3scripts/fix_volume.py
 interval=once
 signal=10
 
+
+[brightness]
+command=~/.i3scripts/brightnessPrint.sh
+interval=once
+signal=11
+
+
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.

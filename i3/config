@@ -223,6 +223,8 @@ bar {
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	}
+        wheel_up_cmd nop
+        wheel_down_cmd nop
 }
 
 # Fix touchpad settings
@@ -234,8 +236,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% &&
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
 
 # brightness
-bindsym XF86MonBrightnessUp exec $psst ~/.i3scripts/brightness.sh inc
-bindsym XF86MonBrightnessDown exec $psst ~/.i3scripts/brightness.sh dec
+bindsym XF86MonBrightnessUp exec $psst ~/.i3scripts/brightness.sh inc && pkill -RTMIN+11 i3blocks
+bindsym XF86MonBrightnessDown exec $psst ~/.i3scripts/brightness.sh dec && pkill -RTMIN+11 i3blocks
 
 bindsym Print exec import -window root ~/screenshot.png
 bindsym $mod+Shift+Print exec import -window "$(xdotool getwindowfocus -f)" ~/screenshot.png

@@ -111,7 +111,7 @@ element normal {
 }
 
 element selected {
-	background-color: #7784a3CC;
+	background-color: #31394fCC;
 }
 
 element alternate {
