@@ -47,6 +47,7 @@ signal=10
 command=~/.i3scripts/brightnessPrint.sh
 interval=once
 signal=11
+min_width= 100
 
 
 # Memory usage
