@@ -25,8 +25,26 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/share/i3blocks/$BLOCK_NAME
-separator_block_width=15
+full_text=〈
+separator=false
+separator_block_width=7
+#separator_block_width=15
 markup=none
+color=#d0d0d0
+
+
+# Battery indicator
+#
+# The battery instance defaults to 0.
+[battery]
+#label=BAT
+command=~/.i3scripts/battery_helper
+#label=⚡
+#instance=1
+interval=20
+#min_width= 100% CHR (11:1)
+
+[separator]
 
 # Volume indicator
 #
@@ -42,6 +60,7 @@ command=~/.i3scripts/volume-pulseaudio | python ~/.i3scripts/fix_volume.py
 interval=once
 signal=10
 
+[separator]
 
 [brightness]
 command=~/.i3scripts/brightnessPrint.sh
@@ -50,14 +69,16 @@ signal=11
 min_width= 100
 
 
+[separator]
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 label=MEM
-separator=false
+#separator=false
 interval=30
 
+[separator]
 #[memory]
 #label=SWAP
 #instance=swap
@@ -80,20 +101,23 @@ interval=30
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
 #instance=wlan0
+label=
 command=iwgetid -r
-color=#00FF00
+#color=#00FF00
 interval=10
-separator=false
-
-[wifi]
+#separator=false
+[separator]
+#[wifi]
 #instance=wlp3s0
-interval=10
-separator=false
+#interval=10
+#separator=false
 
 [bandwidth]
 #instance=eth0
 interval=5
+min_width=IN 000K OUT 00K
 
+[separator]
 # CPU usage
 #
 # The script may be called with -w and -c switches to specify thresholds,
@@ -104,19 +128,7 @@ interval=10
 min_width= 00.00%
 #separator=false
 
-#[load_average]
-#interval=10
-
-# Battery indicator
-#
-# The battery instance defaults to 0.
-[battery]
-#label=BAT
-command=~/.i3scripts/battery_helper
-#label=⚡
-#instance=1
-interval=20
-
+[separator]
 # Date Time
 #
 [time]
