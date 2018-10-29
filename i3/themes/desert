@@ -31,9 +31,9 @@ font pango:System San Francisco Display 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal --hide-menubar --window-with-profile="jesse-white"
-bindsym $mod+KP_Enter exec gnome-terminal --hide-menubar --window-with-profile="jesse-white"
-bindsym $mod+T exec gnome-terminal --hide-menubar --window-with-profile="jesse-white"
+bindsym $mod+Return exec gnome-terminal --hide-menubar --window-with-profile="jesse-desert"
+bindsym $mod+KP_Enter exec gnome-terminal --hide-menubar --window-with-profile="jesse-desert"
+bindsym $mod+T exec gnome-terminal --hide-menubar --window-with-profile="jesse-desert"
 
 # Start google chrome
 bindsym $mod+C exec google-chrome-stable
@@ -194,11 +194,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color            #6d7a8e
-set $inactive-bg-color   #6d7a8e
+set $bg-color            #8c6a3a
+set $inactive-bg-color   #8c6a3a
 set $text-color          #d0d0d0
-set $inactive-text-color #9ca1ad
-set $urgent-bg-color     #962800
+set $inactive-text-color #878c96
+set $urgent-bg-color     #822121
 
 # window colors
 #                       border              background         text                 indicator
@@ -242,14 +242,15 @@ bindsym XF86MonBrightnessDown exec $psst ~/.i3scripts/brightness.sh dec && pkill
 bindsym Print exec import -window root ~/screenshot.png
 bindsym $mod+Shift+Print exec import -window "$(xdotool getwindowfocus -f)" ~/screenshot.png
 # run wallpaper script
-exec_always feh --randomize --bg-fill /usr/local/photos/white/*
-bindsym $mod+Shift+B exec feh --randomize --bg-fill /usr/local/photos/white/*
+exec_always feh --randomize --bg-fill /usr/local/photos/desert/*
+bindsym $mod+Shift+B exec feh --randomize --bg-fill /usr/local/photos/desert/*
+# put conky clock on desktop
 exec conky &
 
 exec_always compton -b --backend glx --vsync opengl-mswc
 
 # ROFI
-exec_always cp ~/.config/rofi/themes/white ~/.config/rofi/config
+exec_always cp ~/.config/rofi/themes/desert ~/.config/rofi/config
 bindsym $mod+d exec rofi -show
 
 # gaps config

@@ -247,7 +247,7 @@ bindsym $mod+Shift+B exec feh --randomize --bg-fill /usr/local/photos/grey/*
 # put conky clock on desktop
 exec conky &
 
-exec_always compton -b --backend glx --vsync opengl-mswc --config ~/.config/comptonGrey.conf
+exec_always compton -b --backend glx --vsync opengl-mswc
 
 # ROFI
 exec_always cp ~/.config/rofi/themes/grey ~/.config/rofi/config
