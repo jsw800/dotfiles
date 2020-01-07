@@ -31,9 +31,9 @@ font pango:System San Francisco Display 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal --hide-menubar --window-with-profile="jesse-green"
-bindsym $mod+KP_Enter exec gnome-terminal --hide-menubar --window-with-profile="jesse-green"
-bindsym $mod+T exec gnome-terminal --hide-menubar --window-with-profile="jesse-green"
+bindsym $mod+Return exec gnome-terminal --hide-menubar --window-with-profile="jesse-blueorange"
+bindsym $mod+KP_Enter exec gnome-terminal --hide-menubar --window-with-profile="jesse-blueorange"
+bindsym $mod+T exec gnome-terminal --hide-menubar --window-with-profile="jesse-blueorange"
 
 # Start google chrome
 bindsym $mod+C exec google-chrome-stable
@@ -199,8 +199,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color            #407005
-set $inactive-bg-color   #407005
+set $bg-color            #2B2F34
+set $inactive-bg-color   #2B2F34
 set $text-color          #d0d0d0
 set $inactive-text-color #878c96
 set $urgent-bg-color     #962800
@@ -242,6 +242,7 @@ exec_always --no-startup-id synclient VertScrollDelta=-50 VertEdgeScroll=0 Horiz
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
+
 bindsym $mod+F2 exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks
 bindsym $mod+F3 exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks
 
@@ -252,15 +253,15 @@ bindsym XF86MonBrightnessDown exec $psst ~/.i3scripts/brightness.sh dec && pkill
 bindsym Print exec import -window root ~/screenshot.png
 bindsym $mod+Shift+Print exec import -window "$(xdotool getwindowfocus -f)" ~/screenshot.png
 # run wallpaper script
-exec_always feh --randomize --bg-fill /usr/local/photos/green/*
-bindsym $mod+Shift+B exec feh --randomize --bg-fill /usr/local/photos/green/*
+exec_always feh --randomize --bg-fill /usr/local/photos/blueorange/*
+bindsym $mod+Shift+B exec feh --randomize --bg-fill /usr/local/photos/blueorange/*
 # put conky clock on desktop
 exec conky &
 
 exec_always compton -b --backend glx --vsync opengl-mswc
 
 # ROFI
-exec_always cp ~/.config/rofi/themes/green ~/.config/rofi/config
+exec_always cp ~/.config/rofi/themes/grey ~/.config/rofi/config
 bindsym $mod+d exec rofi -show
 
 # gaps config

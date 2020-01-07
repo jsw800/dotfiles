@@ -10,5 +10,5 @@ while true; do
         killall xautolock
         xautolock -time 10 -locker '~/.i3scripts/locker.sh' &
     fi
-    sleep 10s
+    sleep 5m
 done

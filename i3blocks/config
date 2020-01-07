@@ -134,7 +134,7 @@ min_width= 00.00%
 [time]
 command=~/.i3scripts/calendar
 #command=date '+%Y-%m-%d %H:%M:%S'
-interval=5
+interval=1
 
 # Generic media player support
 #

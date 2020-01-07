@@ -1,5 +1,5 @@
 #!/bin/bash
-out=$(pstree | grep i3lock)
+out=$(ps -A | grep i3lock)
 echo $out
 if [$out -eq ""]
 then
